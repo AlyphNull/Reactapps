@@ -1,0 +1,24 @@
+/* index.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;  /* Prevents scrolling */
+}
+
+.board {
+  background-color: black;
+  padding: 20px; /* Adjust the padding value as needed */
+  box-sizing: border-box;
+  height: 100vh;  /* 100% of the viewport height */
+  width: 100vw;   /* 100% of the viewport width */
+  display: flex;
+  justify-content: center;  /* Centers SVG horizontally */
+  align-items: center;      /* Centers SVG vertically */
+}
+
+.board svg {
+  background-color: yellow;
+  display: block;
+}
