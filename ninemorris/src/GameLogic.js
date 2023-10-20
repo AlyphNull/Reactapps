@@ -41,9 +41,10 @@ class GameLogic {
   
     // Check for game over conditions
     isGameOver() {
-      // If a player has only two pieces left or can't move their pieces, the game is over
-      // ... Logic to check the conditions ...
-      // Return true if the game is over; false otherwise
+      if (this.player1Pieces < 3 || this.player2Pieces < 3) {
+        return true;
+      }
+      // ... Additional logic to check if no player can move ...
     }
   }
   

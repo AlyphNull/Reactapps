@@ -6,16 +6,16 @@ function Game() {
     const [gameLogic, setGameLogic] = useState(new GameLogic());
     
     const handleIntersectionClick = (intersection, index) => {
-        const newGameLogic = new GameLogic();
-    
-        if (newGameLogic.isGameOver()) {
+      const newGameLogic = {...gameLogic}; // Create a shallow copy of the current gameLogic
+      
+      if (newGameLogic.isGameOver()) {
           return;
-        }
-    
-        if (newGameLogic.placePiece(index)) {
+      }
+  
+      if (newGameLogic.placePiece(index)) {
           setGameLogic(newGameLogic);
-        }
-      };
+      }
+  };
   
     return (
       <Board onIntersectionClick={(intersection, index) => handleIntersectionClick(intersection, index)} />
@@ -54,7 +54,8 @@ function Board({ onIntersectionClick }) {
         { x: 250, y: 200 }, // e4
         { x: 150, y: 250 }, // c5
         { x: 200, y: 250 }, // d5
-        { x: 250, y: 250 }  // e5
+        { x: 250, y: 250 },  // e5
+        { x: 200, y: 200 } // d4
       ];
     const lines = [
         // Horizontal lines
