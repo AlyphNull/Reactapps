@@ -6,12 +6,16 @@ function Game() {
     const [gameLogic, setGameLogic] = useState(new GameLogic());
     
     const handleIntersectionClick = (intersection, index) => {
-      const newGameLogic = new GameLogic();
-      
-      if (newGameLogic.placePiece(index)) {
-        setGameLogic(newGameLogic);
-      }
-    };
+        const newGameLogic = new GameLogic();
+    
+        if (newGameLogic.isGameOver()) {
+          return;
+        }
+    
+        if (newGameLogic.placePiece(index)) {
+          setGameLogic(newGameLogic);
+        }
+      };
   
     return (
       <Board onIntersectionClick={(intersection, index) => handleIntersectionClick(intersection, index)} />
