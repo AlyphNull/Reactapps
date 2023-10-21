@@ -6,7 +6,7 @@ function Game() {
     const [gameLogic, setGameLogic] = useState(new GameLogic());
     
     const handleIntersectionClick = (intersection, index) => {
-      const newGameLogic = {...gameLogic}; // Create a shallow copy of the current gameLogic
+      const newGameLogic = new GameLogic();
       
       if (newGameLogic.isGameOver()) {
           return;
